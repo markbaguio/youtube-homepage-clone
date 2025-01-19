@@ -1,5 +1,11 @@
+import { PageHeader } from "./components/PageHeader";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <PageHeader />
+    </>
+  );
 }
 
 export default App;
