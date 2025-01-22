@@ -1,15 +1,32 @@
-import { Menu, Upload, Bell, User, Mic, Search, ArrowLeft } from "lucide-react";
+import { Menu, Upload, Bell, User, Mic, Search } from "lucide-react";
 import logo from "../assets/clone-logo.png";
 import { Button } from "../components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import SearchBar from "../components/SearchBar";
+import { MDSCREEN } from "../utils/constants";
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] =
-    useState<Boolean>(false);
+    useState<boolean>(false);
 
-  /**
-   * TODO: When the screen is large the full page header should show up.
-   */
+  function handleBackButtonClick() {
+    setShowFullWidthSearch(false);
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= MDSCREEN) {
+        setShowFullWidthSearch(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    //clean up
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
@@ -25,38 +42,10 @@ export function PageHeader() {
           <img src={logo} className="h-6" />
         </a>
       </div>
-      <form
-        className={`gap-4 flex-grow justify-center ${
-          showFullWidthSearch ? "flex" : "hidden md:flex"
-        }`}
-      >
-        {/* <form className={`flex md:hidden gap-4 flex-grow justify-center`}> */}
-        {showFullWidthSearch && (
-          <Button
-            onClick={() => setShowFullWidthSearch(false)}
-            type="button"
-            size="icon"
-            variant="ghost"
-            className="flex-shrink-0"
-          >
-            <ArrowLeft />
-          </Button>
-        )}
-        <div className="flex flex-grow max-w-[600px]">
-          <input
-            type="search"
-            placeholder="Search"
-            className="rounded-l-full border border-secondary-border shadow-inner shadow-secondary py-1 px-4 text-lg w-full
-              focus:border-blue-500 outline-none"
-          />
-          <Button className="py-2 px-4 rounded-r-full border border-secondary-border border-l-0 flex-shrink-0">
-            <Search />
-          </Button>
-        </div>
-        <Button type="button" size="icon" className="flex-shrink-0">
-          <Mic />
-        </Button>
-      </form>
+      <SearchBar
+        onBackButtonClick={handleBackButtonClick}
+        showFullWidthSearch={showFullWidthSearch}
+      />
       <div
         className={`flex-shrink-0 md:gap-2 ${
           showFullWidthSearch ? "hidden" : "flex"
