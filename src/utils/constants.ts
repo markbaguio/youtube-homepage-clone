@@ -1,1 +1,1 @@
-export const MDSCREEN = 768;
+export const MD_SCREEN = 768;

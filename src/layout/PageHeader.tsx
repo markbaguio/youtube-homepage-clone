@@ -3,7 +3,7 @@ import logo from "../assets/clone-logo.png";
 import { Button } from "../components/Button";
 import { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
-import { MDSCREEN } from "../utils/constants";
+import { MD_SCREEN } from "../utils/constants";
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] =
@@ -15,7 +15,7 @@ export function PageHeader() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= MDSCREEN) {
+      if (window.innerWidth >= MD_SCREEN) {
         setShowFullWidthSearch(false);
       }
     };
