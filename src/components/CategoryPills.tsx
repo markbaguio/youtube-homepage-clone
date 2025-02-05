@@ -23,6 +23,7 @@ export function CategoryPills({
             className="py-1 px-3 rounded-lg whitespace-nowrap"
           >
             {category.category}
+            {category.id}
           </Button>
         ))}
       </div>
