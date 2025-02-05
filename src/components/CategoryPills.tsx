@@ -1,3 +1,4 @@
+import { ChevronLeft } from "lucide-react";
 import { Category } from "../dummy-data/home";
 import { Button } from "./Button";
 
@@ -25,6 +26,15 @@ export function CategoryPills({
             {category.category}
           </Button>
         ))}
+      </div>
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 bg-gradient-to-r from-white from-50%  to-transparent w-24">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-full aspect-square w-auto p-1.5"
+        >
+          <ChevronLeft />
+        </Button>
       </div>
     </div>
   );
