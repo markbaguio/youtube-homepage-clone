@@ -228,4 +228,39 @@ export const VIDEOS: Video[] = [
     videoUrl:
       "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
   },
+  {
+    id: "9",
+    title: "Bus Camping In The Rain",
+    channel: {
+      name: "Steve Wallis",
+      id: "campingwithsteve",
+      profileUrl:
+        "https://yt3.ggpht.com/ytc/AIdro_lxDevINPpiqaJJ0LnB4Ih1NXx-7tPu5KA0919KmPbXk4E=s68-c-k-c0x00ffffff-no-rj",
+    },
+    views: 2362629,
+    postedAt: new Date("2022-05-20"),
+    duration: 732,
+    thumbnailUrl:
+      "https://i.ytimg.com/vi/tFSldOXyE0k/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLBiqiRWSZdKqANK7hFcinlU_L0aWA",
+    videoUrl:
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+  },
+  {
+    id: "10",
+    title:
+      "3 Days in Arctic Survival Shelter - Solo Bushcraft Camping & Blacksmithing.",
+    channel: {
+      name: "Outdoor Boys",
+      id: "OutdoorBoys",
+      profileUrl:
+        "https://yt3.ggpht.com/ytc/AIdro_kMwdFZd-Nl1trq6PgKkkqH58o9Lj0phbNoTaFTtNeoNg4=s68-c-k-c0x00ffffff-no-rj",
+    },
+    views: 2362629,
+    postedAt: new Date("2022-05-20"),
+    duration: 732,
+    thumbnailUrl:
+      "https://i.ytimg.com/vi/iys_pmJSp9M/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBdy89SAuNY_LTPrP1mRvOlcJbnUQ",
+    videoUrl:
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+  },
 ];
