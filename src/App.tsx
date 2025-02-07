@@ -38,9 +38,6 @@ function App() {
             ))}
           </div>
         </div>
-        {/**
-         * grid-cols-[repeat(auto-fill, minmax(300px, 1fr))] this means that the column should not be less than 300px and if it gets to the point where it can add more columns it will add automatically.
-         */}
       </div>
     </div>
   );
