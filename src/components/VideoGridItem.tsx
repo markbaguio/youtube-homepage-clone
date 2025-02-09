@@ -1,19 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Channel } from "../dummy-data/home";
+import { VideoProps } from "../dummy-data/home";
 import { formatDuration } from "../utils/formatDuration";
 import { formatTimeAgo } from "../utils/formatTimeAgo";
 import { VIEW_FORMATTER } from "../utils/formatViews";
 
-type VideoGridItemProps = {
-  id: string;
-  title: string;
-  channel: Channel;
-  views: number;
-  postedAt: Date;
-  duration: number;
-  thumbnailUrl: string;
-  videoUrl: string;
-};
+type VideoGridItemProps = VideoProps;
 
 export default function VideoGridItem({
   id,
