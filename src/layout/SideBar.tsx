@@ -1,6 +1,16 @@
-import { Home, Repeat, MailCheck, Library, Divide } from "lucide-react";
-import { Children, ElementType, PropsWithChildren, ReactNode } from "react";
-import { buttonStyles } from "../components/Button";
+import {
+  Home,
+  Repeat,
+  MailCheck,
+  Library,
+  ChevronUp,
+  ChevronDown,
+  Clapperboard,
+  History,
+  SquarePlay,
+} from "lucide-react";
+import { Children, ElementType, ReactNode, useState } from "react";
+import { Button, buttonStyles } from "../components/Button";
 import { twMerge } from "tailwind-merge";
 
 export default function SideBar() {
@@ -16,10 +26,14 @@ export default function SideBar() {
         <SmallSideBarItem Icon={Library} title="Library" url="/" />
       </aside>
       <aside className="w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col gap-2 px-2">
-        <LargeSideBarSection visibleItemCount={1} title="test">
+        <LargeSideBarSection>
           <LargeSideBarItem Icon={Home} title="Home" url="/" />
-          <LargeSideBarItem Icon={Home} title="Home" url="/" />
-          <LargeSideBarItem Icon={Home} title="Home" url="/" />
+          <LargeSideBarItem Icon={SquarePlay} title="Shorts" url="/" />
+          <LargeSideBarItem Icon={Clapperboard} title="Subscription" url="/" />
+        </LargeSideBarSection>
+        <hr />
+        <LargeSideBarSection>
+          <LargeSideBarItem Icon={History} title="History" url="/" />
         </LargeSideBarSection>
       </aside>
     </>
@@ -51,6 +65,7 @@ type LargeSideBarSectionProps = {
   children: ReactNode;
   title?: string;
   visibleItemCount?: number;
+  Icon?: ElementType;
 };
 
 type LargeSideBarItemProps = {
@@ -65,13 +80,30 @@ function LargeSideBarSection({
   title,
   visibleItemCount = Number.POSITIVE_INFINITY,
 }: LargeSideBarSectionProps) {
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
   const childrenArray = Children.toArray(children).flat();
-  const visibleChildren = childrenArray.slice(0, visibleItemCount);
+  const visibleChildren = isExpanded
+    ? childrenArray
+    : childrenArray.slice(0, visibleItemCount);
+
+  const showExpandedButton: boolean = childrenArray.length > visibleItemCount;
+  const ButtonIcon: ElementType = isExpanded ? ChevronUp : ChevronDown;
 
   return (
     <div>
       {title && <div className="ml-4 mt-2 text-lg mb-1">{title}</div>}
       {visibleChildren}
+      {showExpandedButton && (
+        <Button
+          onClick={() => setIsExpanded((expaded) => !expaded)}
+          variant="ghost"
+          className="w-full flex items-center rounded-lg gap-4 p-3"
+        >
+          <ButtonIcon className="w-6 h-6" />
+          <div>{isExpanded ? "Show Less" : "Show More"}</div>
+        </Button>
+      )}
     </div>
   );
 }

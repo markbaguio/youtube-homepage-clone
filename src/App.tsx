@@ -35,6 +35,7 @@ function App() {
                 // postedAt={video.postedAt}
                 // thumbnailUrl={video.thumbnailUrl}
                 // videoUrl={video.videoUrl}
+                key={video.id}
                 {...video}
               />
             ))}

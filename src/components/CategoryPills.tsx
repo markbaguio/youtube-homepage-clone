@@ -3,7 +3,6 @@ import { Category } from "../dummy-data/home";
 import { Button } from "./Button";
 import { useEffect, useRef, useState } from "react";
 import { TRANSLATE_AMOUNT } from "../utils/constants";
-import { useScrollVisibility } from "../hooks/useScrollVisibility";
 
 type CategoryPillsProps = {
   categories: Category[];
