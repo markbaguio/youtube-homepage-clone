@@ -10,8 +10,6 @@ export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] =
     useState<boolean>(false);
 
-  const { toggle } = useSidebarContext();
-
   function handleBackButtonClick() {
     setShowFullWidthSearch(false);
   }
@@ -33,7 +31,7 @@ export function PageHeader() {
 
   return (
     <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
-      <div
+      {/* <div
         className={` gap-4 items-center flex-shrink-0 ${
           showFullWidthSearch ? "hidden" : "flex"
         }`}
@@ -44,7 +42,8 @@ export function PageHeader() {
         <a href="">
           <img src={logo} className="h-6" />
         </a>
-      </div>
+      </div> */}
+      <PageHeaderFirstSection hidden={showFullWidthSearch} />
       <SearchBar
         onBackButtonClick={handleBackButtonClick}
         showFullWidthSearch={showFullWidthSearch}
@@ -75,6 +74,31 @@ export function PageHeader() {
           <User />
         </Button>
       </div>
+    </div>
+  );
+}
+
+type PageHeaderFirstSectionProps = {
+  hidden?: boolean;
+};
+
+export function PageHeaderFirstSection({
+  hidden = false,
+}: PageHeaderFirstSectionProps) {
+  const { toggle } = useSidebarContext();
+
+  return (
+    <div
+      className={` gap-4 items-center flex-shrink-0 ${
+        hidden ? "hidden" : "flex"
+      }`}
+    >
+      <button onClick={toggle} className="">
+        <Menu />
+      </button>
+      <a href="">
+        <img src={logo} className="h-6" />
+      </a>
     </div>
   );
 }

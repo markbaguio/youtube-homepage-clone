@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { LARGE_SCREEN } from "../utils/constants";
 
 type SidebarProviderProps = {
@@ -23,6 +29,19 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
   function isSmallScreen() {
     return window.innerWidth < LARGE_SCREEN;
   }
+
+  useEffect(() => {
+    const handler = () => {
+      if (!isSmallScreen()) setIsSmallOpen(false); //  if on large screen close the sidebar.
+    };
+
+    window.addEventListener("resize", handler);
+
+    //clean up
+    return () => {
+      window.removeEventListener("resize", handler);
+    };
+  }, []);
 
   function toggle() {
     if (isSmallScreen()) {
