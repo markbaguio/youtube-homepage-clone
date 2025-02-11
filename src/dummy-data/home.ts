@@ -88,7 +88,7 @@ export interface Channel {
   profileUrl: string;
 }
 
-export interface Video {
+export interface VideoProps {
   id: string;
   title: string;
   channel: Channel;
@@ -99,7 +99,7 @@ export interface Video {
   videoUrl: string;
 }
 
-export const VIDEOS: Video[] = [
+export const VIDEOS: VideoProps[] = [
   {
     id: "1",
     title: "CSS Anchor Is The Best New CSS Feature Since Flexbox",
