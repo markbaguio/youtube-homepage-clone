@@ -199,7 +199,7 @@ function SmallSideBarItem({ Icon, title, url }: SmallSideBarProps) {
       )}
     >
       <Icon className="w-6 h-6" />
-      <div className="text-sm">{title}</div>
+      <div className="text-[.6rem]">{title}</div>
     </a>
   );
 }
