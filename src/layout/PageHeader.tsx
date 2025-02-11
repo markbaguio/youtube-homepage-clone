@@ -4,10 +4,13 @@ import { Button } from "../components/Button";
 import { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
 import { MD_SCREEN } from "../utils/constants";
+import { useSidebarContext } from "../context/SidebarContext";
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] =
     useState<boolean>(false);
+
+  const { toggle } = useSidebarContext();
 
   function handleBackButtonClick() {
     setShowFullWidthSearch(false);
@@ -35,7 +38,7 @@ export function PageHeader() {
           showFullWidthSearch ? "hidden" : "flex"
         }`}
       >
-        <button className="">
+        <button onClick={toggle} className="">
           <Menu />
         </button>
         <a href="">

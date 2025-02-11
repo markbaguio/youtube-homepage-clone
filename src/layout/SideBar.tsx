@@ -29,20 +29,31 @@ import { Children, ElementType, ReactNode, useState } from "react";
 import { Button, buttonStyles } from "../components/Button";
 import { twMerge } from "tailwind-merge";
 import { playlists, subscriptions } from "../dummy-data/sidebar";
+import { useSidebarContext } from "../context/SidebarContext";
 
 export default function SideBar() {
   /**
    * sidebar size is based on the screen size
    */
+
+  const { isLargeOpen, isSmallOpen } = useSidebarContext();
   return (
     <>
-      <aside className="sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 lg:hidden">
+      <aside
+        className={`sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 ${
+          isLargeOpen ? "lg:hidden" : "lg:flex"
+        }`}
+      >
         <SmallSideBarItem Icon={Home} title="Home" url="/" />
         <SmallSideBarItem Icon={Repeat} title="Shorts" url="/" />
         <SmallSideBarItem Icon={MailCheck} title="Subscription" url="/" />
         <SmallSideBarItem Icon={Library} title="Library" url="/Library" />
       </aside>
-      <aside className="w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 lg:flex hidden">
+      <aside
+        className={`w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 ${
+          isLargeOpen ? "lg:flex" : "lg:hidden"
+        } ${isSmallOpen ? "flex z-[999] bg-white max-h-screen" : "hidden"}`}
+      >
         <LargeSideBarSection>
           <LargeSideBarItem IconOrImgUrl={Home} title="Home" url="/" />
           <LargeSideBarItem
