@@ -89,7 +89,7 @@ export function PageHeaderFirstSection({
 
   return (
     <div
-      className={` gap-4 items-center flex-shrink-0 ${
+      className={`pl-1 gap-4 items-center flex-shrink-0 ${
         hidden ? "hidden" : "flex"
       }`}
     >
