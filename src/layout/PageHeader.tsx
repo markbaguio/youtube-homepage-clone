@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
 import { MD_SCREEN } from "../utils/constants";
 import { useSidebarContext } from "../context/SidebarContext";
+import ThemeToggle from "../components/ThemeToggle";
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] =
@@ -73,6 +74,7 @@ export function PageHeader() {
         <Button size="icon" variant="ghost">
           <User />
         </Button>
+        <ThemeToggle />
       </div>
     </div>
   );
