@@ -6,6 +6,10 @@ import VideoGridItem from "./components/VideoGridItem";
 import SideBar from "./layout/SideBar";
 import { SidebarProvider } from "./context/SidebarContext";
 
+/**
+ * TODO: Implement dark mode.
+ */
+
 function App() {
   const [selectedCategory, setSelectedCategory] = useState<Category>(
     CATEGORIES[0]
