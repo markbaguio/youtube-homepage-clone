@@ -74,7 +74,7 @@ export default function VideoGridItem({
           <a href={`/watch?v=${id}`} className="font-bold">
             {title}
           </a>
-          <a href={`/@${channel.id}`} className="text-secondary-texte text-sm">
+          <a href={`/@${channel.id}`} className="text-secondary-text text-sm">
             {channel.name}
           </a>
           <div className="text-secondary-text text-sm">
