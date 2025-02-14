@@ -135,20 +135,23 @@ export const VIDEOS: VideoProps[] = [
   },
   {
     id: "3",
-    title: "Front-end developer takes on a CSS battle",
+    title:
+      "Tailwind CSS 4.0 is finally here - The NEW way to install with Vite + React (2025)",
     channel: {
-      name: "Kevin Powell",
-      id: "KevinPowell",
+      name: "Lukas | Web Development & Design",
+      id: "lukas.webdev",
       profileUrl:
-        "https://yt3.ggpht.com/ytc/APkrFKa6XiLa13mMVPzkmmTBcgNPjjqCGPrY86KfJFmf5w=s48-c-k-c0x00ffffff-no-rj",
+        "https://yt3.googleusercontent.com/dr8aIhorUkiEw381t158v3AWNgB7nhQbW4g68MjZDkPdq21L6lbE7AA-gl9DACGwE4HhWopIeA=s160-c-k-c0x00ffffff-no-rj",
     },
-    views: 1232300,
-    postedAt: new Date("2023-10-05"),
-    duration: 120,
-    thumbnailUrl: "https://i.ytimg.com/vi/eYPyIq5Y3Rk/maxresdefault.jpg",
+    views: 18200,
+    postedAt: new Date("2025-01-28"),
+    duration: 732,
+    thumbnailUrl:
+      "https://i.ytimg.com/vi/sHnG8tIYMB4/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAWhExoyLVvImCMQBBY7eCM1wqddA",
     videoUrl:
       "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
   },
+
   {
     id: "4",
     title: "Quick guide to CSS focus states",
@@ -261,6 +264,22 @@ export const VIDEOS: VideoProps[] = [
     duration: 732,
     thumbnailUrl:
       "https://i.ytimg.com/vi/iys_pmJSp9M/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBdy89SAuNY_LTPrP1mRvOlcJbnUQ",
+    videoUrl:
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+  },
+  {
+    id: "11",
+    title: "Front-end developer takes on a CSS battle",
+    channel: {
+      name: "Kevin Powell",
+      id: "KevinPowell",
+      profileUrl:
+        "https://yt3.ggpht.com/ytc/APkrFKa6XiLa13mMVPzkmmTBcgNPjjqCGPrY86KfJFmf5w=s48-c-k-c0x00ffffff-no-rj",
+    },
+    views: 1232300,
+    postedAt: new Date("2023-10-05"),
+    duration: 120,
+    thumbnailUrl: "https://i.ytimg.com/vi/eYPyIq5Y3Rk/maxresdefault.jpg",
     videoUrl:
       "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
   },
