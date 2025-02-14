@@ -18,7 +18,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
     if (storedTheme) return storedTheme === "dark";
 
-    return window.matchMedia("(prefers-color-scheme:dark)").matches;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   };
 
   const [darkMode, setDarkMode] = useState<boolean>(getInitialTheme);
