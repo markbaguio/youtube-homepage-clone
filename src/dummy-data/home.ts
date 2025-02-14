@@ -110,7 +110,8 @@ export const VIDEOS: VideoProps[] = [
         "https://yt3.ggpht.com/ytc/APkrFKZWeMCsx4Q9e_Hm6nhOOUQ3fv96QGUXiMr1-pPP=s48-c-k-c0x00ffffff-no-rj",
     },
     views: 222536,
-    postedAt: new Date("2023-08-29"),
+    // postedAt: new Date("2023-08-29"),
+    postedAt: new Date(),
     duration: 938,
     thumbnailUrl: "https://i.ytimg.com/vi/B4Y9Ed4lLAI/maxresdefault.jpg",
     videoUrl:
