@@ -5,8 +5,11 @@ import { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
 import { MD_SCREEN } from "../utils/constants";
 import { useSidebarContext } from "../context/SidebarContext";
+import ThemeToggle from "../components/ThemeToggle";
+import { useTheme } from "../hooks/useTheme";
 
 export function PageHeader() {
+  const { darkMode } = useTheme();
   const [showFullWidthSearch, setShowFullWidthSearch] =
     useState<boolean>(false);
 
@@ -43,7 +46,10 @@ export function PageHeader() {
           <img src={logo} className="h-6" />
         </a>
       </div> */}
-      <PageHeaderFirstSection hidden={showFullWidthSearch} />
+      <PageHeaderFirstSection
+        hidden={showFullWidthSearch}
+        darkMode={darkMode}
+      />
       <SearchBar
         onBackButtonClick={handleBackButtonClick}
         showFullWidthSearch={showFullWidthSearch}
@@ -73,6 +79,7 @@ export function PageHeader() {
         <Button size="icon" variant="ghost">
           <User />
         </Button>
+        <ThemeToggle />
       </div>
     </div>
   );
@@ -80,10 +87,12 @@ export function PageHeader() {
 
 type PageHeaderFirstSectionProps = {
   hidden?: boolean;
+  darkMode: boolean;
 };
 
 export function PageHeaderFirstSection({
   hidden = false,
+  darkMode,
 }: PageHeaderFirstSectionProps) {
   const { toggle } = useSidebarContext();
 
@@ -97,7 +106,11 @@ export function PageHeaderFirstSection({
         <Menu />
       </button>
       <a href="">
-        <img src={logo} className="h-6" />
+        {darkMode ? (
+          <h1 className="text-xl font-semibold">WebTube</h1>
+        ) : (
+          <img src={logo} className="text-amber-400 h-6" />
+        )}
       </a>
     </div>
   );

@@ -68,6 +68,7 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
   );
 }
 
+// hook
 export function useSidebarContext() {
   const value = useContext(SidebarContext);
 

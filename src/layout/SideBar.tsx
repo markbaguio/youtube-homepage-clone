@@ -31,11 +31,14 @@ import { twMerge } from "tailwind-merge";
 import { playlists, subscriptions } from "../dummy-data/sidebar";
 import { useSidebarContext } from "../context/SidebarContext";
 import { PageHeaderFirstSection } from "./PageHeader";
+import { useTheme } from "../hooks/useTheme";
 
 export default function SideBar() {
   /**
    * sidebar size is based on the screen size
    */
+
+  const { darkMode } = useTheme();
 
   const { isLargeOpen, isSmallOpen, close } = useSidebarContext();
   return (
@@ -57,12 +60,14 @@ export default function SideBar() {
         ></div>
       )}
       <aside
-        className={`w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 ${
+        className={`dark:bg-almost-black w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 ${
           isLargeOpen ? "lg:flex" : "lg:hidden"
         } ${isSmallOpen ? "flex z-[999] bg-white max-h-screen" : "hidden"}`}
       >
-        <div className={`lg:hidden pt-4 pb- px-2 sticky top-0 bg-white`}>
-          <PageHeaderFirstSection />
+        <div
+          className={`lg:hidden pt-4 pb- px-2 sticky top-0 dark:bg-almost-black bg-white`}
+        >
+          <PageHeaderFirstSection darkMode={darkMode} />
         </div>
         <LargeSideBarSection>
           <LargeSideBarItem IconOrImgUrl={Home} title="Home" url="/" />
