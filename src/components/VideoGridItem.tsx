@@ -3,6 +3,7 @@ import { VideoProps } from "../dummy-data/home";
 import { formatDuration } from "../utils/formatDuration";
 import { formatTimeAgo } from "../utils/formatTimeAgo";
 import { VIEW_FORMATTER } from "../utils/formatViews";
+import { Badge } from "./Badge";
 
 type VideoGridItemProps = VideoProps;
 
@@ -82,6 +83,7 @@ export default function VideoGridItem({
               postedAt
             )}`}
           </div>
+          <div>{postedAt.getFullYear() === 2025 && <Badge />}</div>
         </div>
       </div>
     </div>
